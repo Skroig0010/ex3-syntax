@@ -1,11 +1,11 @@
 syn region EX3Comment start=+/+ end=+$+
 
 
-syn match EX3DecNumber /DEC[ \t]\+[-]\?\<\d\+\>/ contains=EX3Keyword
-syn match EX3HexNumber /HEX[ \t]\+\<[0-9A-F]\+\>/hs=s+3 contains=EX3Keyword
-syn match EX3Origin /ORG[ \t]\+\<[0-9A-F]\+\>/hs=s+3 contains=EX3Keyword
-syn match EX3Character /CHR[ \t]\+./hs=s+3 contains=EX3Keyword
-syn match EX3Symbol /SYM[ \t]\+\<[A-Za-z_][A-Za-z0-9_]*\>/hs=s+3 contains=EX3Keyword
+syn match EX3DecNumber /\(DEC[ \t]\+\)\@<=[-]\?\<\d\+\>/
+syn match EX3HexNumber /\(HEX[ \t]\+\)\@<=\<[0-9A-F]\+\>/
+syn match EX3Origin /\(ORG[ \t]\+\)\@<=\<[0-9A-F]\+\>/
+syn match EX3Character /\(CHR[ \t]\+\)\@<=./
+syn match EX3Symbol /\(SYM[ \t]\+\)\@<=\<[A-Za-z_][A-Za-z0-9_]*\>/
 
 
 syn match EX3Label /[A-Za-z_][A-Za-z0-9_]*,/he=e-1
@@ -39,11 +39,11 @@ syn keyword EX3Statement SIO
 syn keyword EX3Statement PIO
 syn keyword EX3Statement IMK
 
-syn keyword EX3Keyword HEX contained 
-syn keyword EX3Keyword DEC contained
-syn keyword EX3Keyword CHR contained
-syn keyword EX3Keyword SYM contained
-syn keyword EX3Keyword ORG contained
+syn keyword EX3Keyword HEX
+syn keyword EX3Keyword DEC
+syn keyword EX3Keyword CHR
+syn keyword EX3Keyword SYM
+syn keyword EX3Keyword ORG
 syn keyword EX3End END
 syn keyword EX3Indirect I
 
