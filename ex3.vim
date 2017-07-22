@@ -1,5 +1,7 @@
-syn region EX3Comment start=+/+ end=+$+
+syn region EX3Comment start=+/+ end=+$+ keepend contains=EX3Todo
 
+
+syn keyword EX3Todo TODO contained 
 
 syn match EX3DecNumber /\(DEC[ \t]\+\)\@<=[-]\?\<\d\+\>/
 syn match EX3HexNumber /\(HEX[ \t]\+\)\@<=\<[0-9A-F]\+\>/
@@ -48,6 +50,7 @@ syn keyword EX3End END
 syn keyword EX3Indirect I
 
 highlight link EX3Comment Comment
+highlight link EX3Todo	Todo
 highlight link EX3Statement Statement
 highlight link EX3DecNumber Number
 highlight link EX3HexNumber Number
